@@ -1,0 +1,17 @@
+terraform refresh
+rm -f ../../inventory
+sh create-inv.sh > ../../inventory
+cd ../../
+ansible all -m ping
+ansible all -a "df -h"
+ansible-playbook playbooks/1.1.packages.yml
+ansible-playbook playbooks/2.hostfile.yml
+ansible all -a "cat /etc/hosts"
+          ansible-playbook playbooks/3.0.gluster.yml
+          ansible all -a "gluster peer status"
+          ansible all -a "gluster volume info"
+          ansible all -a "cat /etc/fstab"
+          ansible all -a "df -h"
+ansible-playbook playbooks/3.1.create_folders.yml
+ansible-playbook playbooks/7.send_critical_files.yml
+          ansible all -a "df -h"
