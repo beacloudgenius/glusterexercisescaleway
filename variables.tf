@@ -1,6 +1,6 @@
 provider "scaleway" {
-  organization = "8b1331e2-4d22-4706-954f-9253e1959984"
-  token        = "6ad9dbc4-fadd-4836-b86c-ca6044ef9803"
+  organization = "REPLACETHIS"
+  token        = "REPLACETHIS"
   region       = "par1"
 }
 

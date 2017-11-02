@@ -1,0 +1,14 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+127.0.1.1   guest.guest	guest
+
+# The following lines are desirable for IPv6 capable hosts
+::1         localhost ip6-localhost ip6-loopback localhost.localdomain localhost6 localhost6.localdomain6
+ff02::1     ip6-allnodes
+ff02::2     ip6-allrouters
+
+# {{ ansible_managed }}
+{% for item in play_hosts %}
+{% set short_name = item.split('.') %}
+{{ hostvars[item]['ansible_eth0']['ipv4']['address'] }}  {{ item }} {{ short_name[0] }}
+{% endfor %}
+# use ansible_eth0 for scaleway and ansible_ens7 for vultr
