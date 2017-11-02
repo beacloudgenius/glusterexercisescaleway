@@ -4,9 +4,17 @@ jq is required locally on the workstation
 
     sudo apt-get install jq
 
+Build the cluster
 
-Play like this.
+edit the `variables.tf` and provide your accesskey and token from scaleway account.
 
+    terraform apply
+
+Check output form terraform and update the inventory file.
+
+    vi inventory
+
+Play ansible like this.
 
     ansible all -m ping
     ansible all -a "df -h"
