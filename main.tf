@@ -5,7 +5,7 @@ data "scaleway_image" "mychoice" {
 
 data "scaleway_bootscript" "latest" {
   architecture = "x86_64"
-  name_filter  = "x86_64 mainline 4.13"
+  name_filter  = "x86_64 mainline 4.15.7 rev1"
 }
 
 data "external" "swarm_join_token" {

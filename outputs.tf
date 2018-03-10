@@ -14,13 +14,6 @@ output "worker_0_private_ip" {
   value = "${scaleway_server.docker_swarm_worker.0.private_ip}"
 }
 
-output "worker_1_public_ip" {
-  value = "${scaleway_server.docker_swarm_worker.1.public_ip}"
-}
-
-output "worker_1_private_ip" {
-  value = "${scaleway_server.docker_swarm_worker.1.private_ip}"
-}
 
 #    #http://aukjan.vanbelkum.nl/2016/02/23/Ansible-inventory-from-Terraform/
 #    #https://github.com/aukjan/terraform-playground/tree/master/ansible/hosts
